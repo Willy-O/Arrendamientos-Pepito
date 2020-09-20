@@ -76,12 +76,12 @@
 
                             <div class="col-md-7">
 
-                                <select name="state" class="form-control @error('state') is-invalid @enderror" id="state" required>
+                                <select name="state" class="form-control @error('state') is-invalid @enderror" id="state" id="state" required>
                                     <option value=></option>
-                                    <option value="primaria">primaria</option>
-                                    <option value="bachiller">bachiller</option>
-                                    <option value="universitario">universitaria</option>
-                                    <option value="postgrado">Post grado</option>
+                                    <option value="pr">primaria</option>
+                                    <option value="ba">bachiller</option>
+                                    <option value="un">universitaria</option>
+                                    <option value="po">Post grado</option>
                                 </select>
 
                                 @error('state')
@@ -97,7 +97,7 @@
 
                             <div class="col-md-7">
 
-                                <select name="city" class="form-control @error('city') is-invalid @enderror" id="city" required>
+                                <select name="city" class="form-control @error('city') is-invalid @enderror" id="city" id="city" required>
                                     <option value=></option>
                                     <option value="primaria">primaria</option>
                                     <option value="bachiller">bachiller</option>
@@ -118,12 +118,12 @@
 
                             <div class="col-md-7">
 
-                                <select name="zip" class="form-control @error('zip') is-invalid @enderror" id="zip" required>
+                                <select name="zip" class="form-control @error('zip') is-invalid @enderror" id="zip" required id="zip">
                                     <option value=></option>
-                                    <option value="primaria">primaria</option>
-                                    <option value="bachiller">bachiller</option>
-                                    <option value="universitario">universitaria</option>
-                                    <option value="postgrado">Post grado</option>
+                                    <option value="prima">primaria</option>
+                                    <option value="bachi">bachiller</option>
+                                    <option value="unive">universitaria</option>
+                                    <option value="postg">Post grado</option>
                                 </select>
 
                                 @error('zip')
@@ -138,12 +138,12 @@
                             <label for="country" class="col-md-3 col-form-label text-md-right">País</label>
 
                             <div class="col-md-7">
-                                <select name="country" class="form-control @error('country') is-invalid @enderror" id="zip" required>
+                                <select name="country" id="country" class="form-control @error('country') is-invalid @enderror" id="zip" required>
                                     <option value=></option>
-                                    <option value="primaria">primaria</option>
-                                    <option value="bachiller">bachiller</option>
-                                    <option value="universitario">universitaria</option>
-                                    <option value="postgrado">Post grado</option>
+                                    <option value="pr">primaria</option>
+                                    <option value="ba">bachiller</option>
+                                    <option value="un">universitaria</option>
+                                    <option value="po">Post grado</option>
                                 </select>
 
                                 @error('country')
@@ -167,7 +167,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row center">
+                        <div class="form-group row">
                             <div class="mx-auto">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Registrar') }}
@@ -180,4 +180,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+        jQuery(function($){
+            $('#city').select2();
+        });
+    </script>
 @endsection

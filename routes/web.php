@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\BuildingController;
+use App\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ Route::group(['prefix' => 'inmuebles'], function(){
     Route::get('{inmueble}', 'BuildingController@show')->name('inmuebles');
     Route::get('{inmueble}/edit', 'BuildingController@edit')->name('inmuebles.edit');
     Route::put('{inmueble}', 'BuildingController@update')->name('inmuebles.update');
-    Route::delete('{inmuebles}', 'BuildingController@destroy')->name('inmuebles.destroy');
+    Route::delete('{inmueble}', 'BuildingController@destroy')->name('inmuebles.destroy');
 });
 
 

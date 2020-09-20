@@ -15,15 +15,15 @@ class CreateBuildingsTable extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->nullable($value = false);
-            $table->text('description')->nullable($value = false);
-            $table->float('price')->nullable($value = false);
-            $table->string('address', 200)->nullable($value = false);
-            $table->string('state', 2)->nullable($value = false);
-            $table->string('city', 100)->nullable($value = false);
-            $table->string('zip', 5)->nullable($value = false);
-            $table->string('country', 2)->nullable($value = false);
-            $table->string('image')->nullable($value = false);
+            $table->string('name', 100);
+            $table->text('description');
+            $table->float('price');
+            $table->string('address', 200);
+            $table->string('state', 2);
+            $table->string('city', 100);
+            $table->string('zip', 5);
+            $table->string('country', 2);
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

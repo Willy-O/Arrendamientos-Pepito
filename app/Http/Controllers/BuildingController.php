@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBuilding;
+use App\Models\Building;
 
 class BuildingController extends Controller
 {
@@ -29,25 +33,33 @@ class BuildingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  StoreBuilding|Request  $request
+     * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBuilding $request)
+    public function store(Request $request)
     {
-        return 'Store';
-        // $inmueble = new Buildign;
+        // $validated = $request->validated();
+        // $inmueble = new Building;
         // $inmueble->name = $request->get('name');
-        // $inmueble->lastName = $request->get('description');
-        // $inmueble->gender = $request->get('price');
-        // $inmueble->dateBorn = $request->get('address');
-        // $inmueble->email = $request->get('zip');
-        // $inmueble->homeAddress = $request->get('city');
-        // $inmueble->cellPhone = $request->get('state');
-        // $inmueble->homePhone = $request->get('country');
+        // $inmueble->description = $request->get('description');
+        // $inmueble->price = $request->get('price');
+        // $inmueble->address = $request->get('address');
+        // $inmueble->zip = $request->get('zip');
+        // $inmueble->city = $request->get('city');
+        // $inmueble->state = $request->get('state');
+        // $inmueble->country = $request->get('country');
 
-        // $beneficiary->save();
+        $inmueble = new Building($request->all());
 
-        // return redirect()->route('inmuebles',   ['inmueble' => $inmueble->id]);
+        if ($request->hasFile('photo')){
+            $photo = $request->file('photo');
+            $file = $photo->store('img');
+            $inmueble->photo = $file;
+        }
+
+        $inmueble->save();
+
+        return redirect()->route('inmuebles', $inmueble);
     }
 
     /**
@@ -58,7 +70,9 @@ class BuildingController extends Controller
      */
     public function show($id)
     {
-        //
+        $inmueble = Building::find($id);
+
+        return view('inmuebles.show', compact('inmueble'));
     }
 
     /**

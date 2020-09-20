@@ -49,6 +49,7 @@ class StoreBuilding extends FormRequest
     public function messages(){
         return[
             'name.required' => 'El campo Nombre es requerido',
+            'name.min' => 'Debe agregar mas de 3 caracteres',
             'description.required' => 'El campo Descripción es requerido',
             'price.required' => 'El campo Precio es requerido',
             'address.required' => 'El campo Dirección es requerido',
