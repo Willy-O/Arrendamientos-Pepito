@@ -24,14 +24,14 @@ class BuildingFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'description' => $this->faker->description,
-            'price' => $this->faker->price,
+            'description' => $this->faker->text,
+            'price' => $this->faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
             'address' => $this->faker->address,
-            'state' => $this->faker->state,
-            'city' => $this->faker->city,
-            'zip' => $this->faker->zip,
-            'country' => $this->faker->country,
-            'photo' => $this->faker->image
+            'state' => $this->faker->countryCode,
+            'city' => $this->faker->name,
+            'zip' => $this->faker->randomNumber(5),
+            'country' => $this->faker->countryCode,
+            'photo' => $this->faker->imageUrl($width = 640, $height = 480)
         ];
     }
 }

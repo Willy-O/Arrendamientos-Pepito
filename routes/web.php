@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
+use App\Http\Controllers\BuildingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,32 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect()->to('home');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => 'inmuebles'], function(){
+    Route::get('/', 'BuildingController@index')->name('inmuebles.index');
+    Route::get('create', 'BuildingController@create')->name('inmuebles.create');
+    Route::post('/', 'BuildingController@store')->name('inmuebles.store');
+    Route::get('{inmueble}', 'BuildingController@show')->name('inmuebles');
+    Route::get('{inmueble}/edit', 'BuildingController@edit')->name('inmuebles.edit');
+    Route::put('{inmueble}', 'BuildingController@update')->name('inmuebles.update');
+    Route::delete('{inmuebles}', 'BuildingController@destroy')->name('inmuebles.destroy');
+});
+
+
+Route::get('/home', function () {
+    if( Auth::user() ) 
+        if( Auth::user()->rol =='admin' )
+            return redirect('/admin');
+        else
+            return redirect('/inmuebles');
+    else
+        return redirect('/login');
+});
+
+// Route::get('admin','LoginController@admin');
+// Route::get('normal','LoginController@normal');  

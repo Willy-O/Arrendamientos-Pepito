@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Building extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description', 
+        'price', 
+        'address', 
+        'zip', 
+        'city', 
+        'state', 
+        'country',
+        'photo'
+    ];
+
 }

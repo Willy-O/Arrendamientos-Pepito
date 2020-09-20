@@ -23,6 +23,7 @@ class CreateBuildingsTable extends Migration
             $table->string('city', 100)->nullable($value = false);
             $table->string('zip', 5)->nullable($value = false);
             $table->string('country', 2)->nullable($value = false);
+            $table->string('image')->nullable($value = false);
             $table->timestamps();
         });
     }
