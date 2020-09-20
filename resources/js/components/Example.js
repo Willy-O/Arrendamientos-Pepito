@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { DatePicker } from 'antd';
 import 'antd/dist/antd.css';
+import { ApiCountries } from '../services/ApiCountries';
 // import 'antd/dist/antd.less'
 
 function Example() {
@@ -14,6 +15,12 @@ function Example() {
 
                         <div className="card-body">I'm an example component!</div>
                     </div>
+                    <div>
+                        <DatePicker />
+                    </div>
+                    <div>
+                        <ApiCountries />
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,5 +30,5 @@ function Example() {
 export default Example;
 
 if (document.getElementById('example')) {
-    ReactDOM.render(<DatePicker />, document.getElementById('example'));
+    ReactDOM.render(<Example />, document.getElementById('example'));
 }
