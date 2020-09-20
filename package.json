@@ -25,6 +25,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "antd": "^4.6.4",
         "wouter": "^2.5.1"
     }
 }

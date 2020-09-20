@@ -23,7 +23,15 @@ class BuildingFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'description' => $this->faker->description,
+            'price' => $this->faker->price,
+            'address' => $this->faker->address,
+            'state' => $this->faker->state,
+            'city' => $this->faker->city,
+            'zip' => $this->faker->zip,
+            'country' => $this->faker->country,
+            'photo' => $this->faker->image
         ];
     }
 }

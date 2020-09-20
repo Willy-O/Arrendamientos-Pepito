@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { DatePicker } from 'antd';
+import 'antd/dist/antd.css';
+// import 'antd/dist/antd.less'
 
 function Example() {
     return (
@@ -20,5 +23,5 @@ function Example() {
 export default Example;
 
 if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+    ReactDOM.render(<DatePicker />, document.getElementById('example'));
 }
