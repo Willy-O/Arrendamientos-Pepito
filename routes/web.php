@@ -14,12 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    try{
-        DB::connection()->getPdo();
-    } catch (\Excetion $e){
-        die("No se pudo conectar a la base de datos" .$e);
-    }
+    return view('welcome');
 });
 
 Auth::routes();
