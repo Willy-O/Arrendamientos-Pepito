@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Building;
 
-class UserTableSeeder extends Seeder
+class BuildingTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(10)->create();
+        Building::factory(20)->create();
     }
 }

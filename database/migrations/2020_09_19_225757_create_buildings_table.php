@@ -15,7 +15,7 @@ class CreateBuildingsTable extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
+            $table->string('name', 155);
             $table->text('description');
             $table->float('price');
             $table->string('address', 200);
