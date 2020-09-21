@@ -176,7 +176,8 @@
                             <label for="photo" class="col-md-3 col-form-label text-md-right">{{ __('photo') }}</label>
 
                             <div class="col-md-7">
-                                <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" required autocomplete="current-photo">
+                                <input id="photo" type="file" class="form-control @error('photo') is-invalid @enderror" name="photo" required autocomplete="current-photo" 
+                                value="{{$inmueble->photo}}">
 
                                 @error('photo')
                                     <span class="invalid-feedback" role="alert">
@@ -188,7 +189,7 @@
                         <div class="form-group row">
                             <div class="mx-auto">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
+                                    {{ __('Actualizar') }}
                                 </button>
                             </div>
                         </div>

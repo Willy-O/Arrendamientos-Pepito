@@ -50,7 +50,7 @@ class BuildingController extends Controller
 
         if ($request->hasFile('photo')){
             $photo = $request->file('photo');
-            $file = $photo->store('img');
+            $file = $photo->store('img/buildings');
             $inmueble->photo = $file;
         }
 
@@ -94,7 +94,15 @@ class BuildingController extends Controller
     public function update(Request $request, $id)
     {
         $inmueble = Building::where('id', $id)->first();
-        dd($id);
+        $inmueble = $request->all();
+        if ($request->hasFile('photo')){
+            $photo = $request->file('photo');
+            $file = $photo->store('img/buildings');
+            $inmueble->photo = $file;
+        }
+        $inmueble->save();
+
+        return redirect()->route('inmuebles', $inmueble);
     }
 
     /**
