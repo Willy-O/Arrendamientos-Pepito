@@ -79,7 +79,7 @@ Formato modelado: XGA (Resolucion = 1024×768, escala =	4:3)
 * Xampp para obtener php 7 o superior
 * Modificar el archivo php.init para las extensiones de Pdo-pgsql
 * Instalar postgreSql
-* Importar la base de datos (database.backup o database.sql)
+* Importar la base de datos (database.backup o database.sql) para obtener algunos datos de ejemplos o correr las migraciones de php con "php migrate"
 * Configurar el archivo .env con los datos asignados a su base de datos.
 * Correr el servidor con "php artisan serve"
 * Usar la aplicación
