@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Crear inmueble') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('inmuebles.store') }}">
+                    <form method="POST" action="{{ route('inmuebles.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">

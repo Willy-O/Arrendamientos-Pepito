@@ -7,10 +7,10 @@
             
             <div class="row">
                 @foreach ($inmuebles as $inmueble)
-                    <div class="col-4">
+                    <div class="col-4 pt-4">
                         <img src="{{ asset($inmueble->photo) }}" alt="" srcset="" class="img-fluid. max-width: 100%;">
-                        <label for="address">{{ $inmueble->country }} {{ $inmueble->state }} {{ $inmueble->city}}</label>
-                        <label for="name">{{ $inmueble->price }}</label>
+                        <label for="address" class="row">{{ $inmueble->country }} {{ $inmueble->state }} {{ $inmueble->city}}</label>
+                        <label for="name" class="row">{{ $inmueble->price }}</label>
                     </div>   
                 @endforeach
             </div>

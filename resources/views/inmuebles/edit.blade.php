@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Crear inmueble') }}</div>
 
                 <div class="card-body">
-                    <form method="PUT" action="{{ route('inmuebles.update', $inmueble->id) }}">
+                    <form method="PUT" action="{{ route('inmuebles.update', $inmueble->id) }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
