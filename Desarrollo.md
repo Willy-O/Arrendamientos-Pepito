@@ -74,4 +74,12 @@ Formato modelado: XGA (Resolucion = 1024×768, escala =	4:3)
 
 * Hay que tener varias opciones de desarrollo, si no funciona la opción 1 seguir con la siguiente y no perder tiempo en la primera.
 
+## Instalaciones necesarias para correr el proyecto en windows
 
+* Xampp para obtener php 7 o superior
+* Modificar el archivo php.init para las extensiones de Pdo-pgsql
+* Instalar postgreSql
+* Importar la base de datos (database.backup o database.sql)
+* Configurar el archivo .env con los datos asignados a su base de datos.
+* Correr el servidor con "php artisan serve"
+* Usar la aplicación
