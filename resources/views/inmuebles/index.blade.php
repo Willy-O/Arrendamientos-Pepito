@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -10,25 +10,16 @@
                 <div class="card-body">
                         @csrf
 
-                        @foreach ($inmuebles as $inmueble)
-                            <p>{{$inmueble->name}}</p>        
-                        @endforeach
+                        <div>
+                            @foreach ($inmuebles as $inmueble)       
+                                        <img src="{{ asset($inmueble->photo) }}" alt="" srcset="" class="img-fluid. max-width: 100%;">
+                                        <label for="hola" class="col-md-4 col-form-label text-md-right">{{ $inmueble->name }}</label>
+
+                                </div>
+                            @endforeach
+                        </div>
 
                         {{ $inmuebles->links() }}
-                        {{-- <div class="form-group row">
-                            <label for="hola" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="hola" type="text" class="form-control @error('hola') is-invalid @enderror" name="hola" value="{{ old('hola') }}" required autocomplete="hola" autofocus>
-
-                                @error('hola')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
-
                     </form>
                 </div>
             </div>

@@ -28,7 +28,7 @@ Route::group(['prefix' => 'inmuebles'], function(){
     Route::get('create', 'BuildingController@create')->name('inmuebles.create');
     Route::post('/', 'BuildingController@store')->name('inmuebles.store');
     Route::get('{inmueble}', 'BuildingController@show')->name('inmuebles');
-    Route::get('{inmueble}/edit', 'BuildingController@edit')->name('inmuebles.edit');
+    Route::get('edit/{inmueble}', 'BuildingController@edit')->name('inmuebles.edit');
     Route::put('{inmueble}', 'BuildingController@update')->name('inmuebles.update');
     Route::delete('{inmueble}', 'BuildingController@destroy')->name('inmuebles.destroy');
 });

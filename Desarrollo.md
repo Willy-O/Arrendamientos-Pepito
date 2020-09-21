@@ -31,6 +31,7 @@ Formato modelado: XGA (Resolucion = 1024×768, escala =	4:3)
 ## Pasos realizados (F = fail, S= success)
 
 * Crear UI con figma (F.1)
+* Crear contenedor con docker (F.2)
 * Crear proyecto en laravel con homestead (F.2)
 * Crear proyecto en laravel con composer (S)
 * Configurar archiv .env para la intengración con la base de datos postgresql (S)
@@ -47,17 +48,21 @@ Formato modelado: XGA (Resolucion = 1024×768, escala =	4:3)
 * Modificar menú para colocar opciones "Registrar inmueble" y "Inmueble" (S)
 * Crear la vista global de los inmuebles
 * Crear y correr los seeders para prueba de la vista global de los inmuebles (F.7)
-* Crear datos de prueba de forma manual (S)
+* Crear datos de prueba mediante sentencias SQL (S)
+* Agregando el CDN de "tailwind css" para usar el paginador de laravel 8 (no es la mejor practica, pero para no instalarlo por npm en caso de que no me guste) (S)
+* Crear la vista para editar inmueble (S)
+* Ajustes en la vista global de los inmuebles ()
 
 ## Problemas obtenidos
 
 * El desarrollo de una UI con figma no se realizo en su totalidad ya que no conseguí una paleta de colores agradable, decidí trabaja con los elementos y colores que proporciona bootstrap, ya que no es un proyecto grande y para no perder más tiempo. (F.1)
-* Cree la aplicacion con homestead, pero al ser manejada con una maquina virtual, cada cambio realizado al servidor había que reiniciarla, además a la hora de iniciar el servidor arrojaba errores constantemente (F.2)
-* Instalé "Ant Design", por nmp no se pudo, así que use yarn. No termino utilizandola porque no estoy usando react, ver F.4. (F.3)
-* Intenté  usar React.js para la interfaz de usuario, pero mi falta de conocimiento para su entegración con laravel me hizo desistir de esta idea ya que la forma conseguida me hacía tener que ejecutar un comando por consola cada vez que se hiciera un ajuste en un componente, haciendo lento y tedioso el desarrollo. (F.4)
-* Cree un StoreRequest para validar el formulario de inmueble.create en la parte del backend, Arrojaba error "No found App\Request\StoreBuilding". Revice minusiosamente las llamadas a este y no conseguí ningun error, continue el desarrollo sin esta caracteristica. (F.5)
-* Intenté hacer push de los avances del proyecto, pero como ya había creado este archivo en el repositorio remote obtengo conflicto y no se puedo hacer push. (F.6)
-* Cree y corri los seeders de manera "exitosa", la consola dice que se corrio exitosamente, pero no me muestra los datos en la base de datos (F.7)
+* No conseguí una forma de instalar docker en windows 7. (F.2)
+* Cree la aplicacion con homestead, pero al ser manejada con una maquina virtual, cada cambio realizado al servidor había que reiniciarla, además a la hora de iniciar el servidor arrojaba errores constantemente (F.3)
+* Instalé "Ant Design", por nmp no se pudo, así que use yarn. No termino utilizandola porque no estoy usando react, ver F.4. (F.4)
+* Intenté  usar React.js para la interfaz de usuario, pero mi falta de conocimiento para su entegración con laravel me hizo desistir de esta idea ya que la forma conseguida me hacía tener que ejecutar un comando por consola cada vez que se hiciera un ajuste en un componente, haciendo lento y tedioso el desarrollo. (F.5)
+* Cree un StoreRequest para validar el formulario de inmueble.create en la parte del backend, Arrojaba error "No found App\Request\StoreBuilding". Revice minusiosamente las llamadas a este y no conseguí ningun error, continue el desarrollo sin esta caracteristica. (F.6)
+* Intenté hacer push de los avances del proyecto, pero como ya había creado este archivo en el repositorio remote obtengo conflicto y no se puedo hacer push. (F.7)
+* Cree y corrÍ los seeders de manera "exitosa", la consola dice que se corrio exitosamente, pero no me muestra los datos en la base de datos, intenté creando un objeto de los metodos (la forma de hacerlo con la version 8 de larevel, la última actualización del framework) y mediante funciones (la forma de versiones anteriores a la 8 del framework) (F.8)
 
 ## Problemas solucionados
 

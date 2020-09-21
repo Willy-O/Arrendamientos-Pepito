@@ -22,7 +22,7 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        $inmuebles = Building::orderBy('updated_at', 'desc')->paginate(12);
+        $inmuebles = Building::orderBy('updated_at', 'desc')->paginate(3);
 
         return view('inmuebles.index', compact('inmuebles'));
     }
@@ -45,16 +45,6 @@ class BuildingController extends Controller
      */
     public function store(Request $request)
     {
-        // $validated = $request->validated();
-        // $inmueble = new Building;
-        // $inmueble->name = $request->get('name');
-        // $inmueble->description = $request->get('description');
-        // $inmueble->price = $request->get('price');
-        // $inmueble->address = $request->get('address');
-        // $inmueble->zip = $request->get('zip');
-        // $inmueble->city = $request->get('city');
-        // $inmueble->state = $request->get('state');
-        // $inmueble->country = $request->get('country');
 
         $inmueble = new Building($request->all());
 
@@ -90,7 +80,8 @@ class BuildingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $inmueble = Building::where('id', $id)->first();
+        return view('inmuebles.edit', compact('inmueble'));
     }
 
     /**
@@ -102,7 +93,8 @@ class BuildingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inmueble = Building::where('id', $id)->first();
+        dd($id);
     }
 
     /**

@@ -8,14 +8,14 @@
                 <div class="card-header">{{ __('Crear inmueble') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('inmuebles.store') }}">
+                    <form method="PUT" action="{{ route('inmuebles.update', $inmueble->id) }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-7">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" maxlength="155" value="{{ old('name') }}" required autocomplete="off" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" maxlength="155" value="{{ $inmueble->name }}" required autocomplete="off" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="description" class="col-md-3 col-form-label text-md-right">{{ __('Descripción') }}</label>
 
                             <div class="col-md-7">
-                                <textarea id="description" type="" class="form-control @error('description') is-invalid @enderror" name="description" maxlength="1000" required></textarea>
+                                <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" maxlength="1000" required>{{ $inmueble->description }}</textarea>
 
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -44,7 +44,15 @@
                             <label for="price" class="col-md-3 col-form-label text-md-right">{{ __('Precio') }}</label>
 
                             <div class="col-md-7">
-                                <input id="price" type="number" class="form-control @error('price') is-invalid @enderror" name="price" min="0.00" step="0.01" required autocomplete="current-price">
+                                <input id="price"
+                                        type="number"
+                                        class="form-control 
+                                        @error('price') is-invalid @enderror" 
+                                        name="price" 
+                                        min="0.00" 
+                                        step="0.01"
+                                        required autocomplete="current-price"
+                                        value="{{ $inmueble->price }}">
 
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">
@@ -59,7 +67,14 @@
                             <label for="address" class="col-md-3 col-form-label text-md-right">{{ __('Dirección') }}</label>
 
                             <div class="col-md-7">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" maxlength="155" required autocomplete="current-address">
+                                <input id="address" 
+                                        type="text" 
+                                        class="form-control 
+                                        @error('address') is-invalid @enderror" 
+                                        name="address" 
+                                        maxlength="155" 
+                                        required autocomplete="current-address"
+                                        value="{{ $inmueble->address }}">
 
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
@@ -75,8 +90,12 @@
 
                             <div class="col-md-7">
 
-                                <select name="state" class="form-control @error('state') is-invalid @enderror" id="state" id="state" required>
-                                    <option value=></option>
+                                <select name="state" 
+                                        class="form-control 
+                                        @error('state') is-invalid @enderror" 
+                                        id="state" 
+                                        required>
+                                    <option value="{{ $inmueble->state }}">{{ $inmueble->state }}</option>
                                     <option value="pr">primaria</option>
                                     <option value="ba">bachiller</option>
                                     <option value="un">universitaria</option>
@@ -97,7 +116,7 @@
                             <div class="col-md-7">
 
                                 <select name="city" class="form-control @error('city') is-invalid @enderror" id="city" id="city" required>
-                                    <option value=></option>
+                                    <option value="{{ $inmueble->city }}">{{ $inmueble->city }}</option>
                                     <option value="primaria">primaria</option>
                                     <option value="bachiller">bachiller</option>
                                     <option value="universitario">universitaria</option>
@@ -118,7 +137,7 @@
                             <div class="col-md-7">
 
                                 <select name="zip" class="form-control @error('zip') is-invalid @enderror" id="zip" required id="zip">
-                                    <option value=></option>
+                                    <option value="{{ $inmueble->zip }}">{{ $inmueble->zip }}</option>
                                     <option value="prima">primaria</option>
                                     <option value="bachi">bachiller</option>
                                     <option value="unive">universitaria</option>
@@ -138,7 +157,7 @@
 
                             <div class="col-md-7">
                                 <select name="country" id="country" class="form-control @error('country') is-invalid @enderror" id="zip" required>
-                                    <option value=></option>
+                                    <option value="{{ $inmueble->country }}">{{ $inmueble->country }}</option>
                                     <option value="pr">primaria</option>
                                     <option value="ba">bachiller</option>
                                     <option value="un">universitaria</option>
@@ -179,12 +198,4 @@
         </div>
     </div>
 </div>
-@endsection
-
-@section('scripts')
-    <script>
-        jQuery(function($){
-            $('#city').select2();
-        });
-    </script>
 @endsection
