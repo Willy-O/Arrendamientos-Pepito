@@ -2,7 +2,7 @@
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 @section('content')
 <div class="container">
-    <div class="card-header">{{ __('Inmuebles') }}</div>
+    <div class="card-header text-uppercase" style="font-size: 20">{{ __('Inmuebles') }}</div>
             @csrf
             
             <div class="row">

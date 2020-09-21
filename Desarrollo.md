@@ -53,7 +53,9 @@ Formato modelado: XGA (Resolucion = 1024×768, escala =	4:3)
 * Crear datos de prueba mediante sentencias SQL (S)
 * Agregando el CDN de "tailwind css" para usar el paginador de laravel 8 (no es la mejor practica, pero para no instalarlo como dependencía en caso de que no me guste el resultado final) (S)
 * Crear la vista para editar inmueble (S)
-* Ajustes en la vista global de los inmuebles ()
+* Ajustes en la vista global de los inmuebles (S)
+* Agregar librería "intervention/image" via composer para manejar las imagenes (S)
+* Agregar las líneas correspondientes en los arreglos $provider, $aliases para usar la librería "intervention/image" (S)
 
 ## Problemas obtenidos
 
