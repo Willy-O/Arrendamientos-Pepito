@@ -22,7 +22,7 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        $inmuebles = Building::orderBy('updated_at', 'desc')->paginate(3);
+        $inmuebles = Building::orderBy('updated_at', 'desc')->paginate(4);
 
         return view('inmuebles.index', compact('inmuebles'));
     }
